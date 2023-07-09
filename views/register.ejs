@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto:wght@400;900&display=swap"
+    rel="stylesheet">
+<%- include("partials/head")%>
+    <%- include("partials/header")%>
+        <body>
+            <div>
+                <div class="allregisterbox">
+                    <div class="registerbox1">
+                        <h2 class="registerheader">COMPLETA TUS DATOS PERSONALES</h2>
+                        <div class="registerform">
+                            <form action="/user/create" method="post">
+                                <div class="fullnamediv">
+                                    <label for="first_name" class="surnamereg"  >
+                                        <span class="fullnamelabel">Nombre completo</span>
+                                    </label>
+                                    <input aria-invalid="false" id="first_name" name="first_name" type="text" maxleght="64"
+                                    class="fullnamereg" id="first_name" value="<%= locals.old ? old.first_name : '' %>"><span></span>
+                                    <% if (locals.errors && errors.first_name) { %>
+                                        <div class="validation">
+                                            <%= errors.first_name.msg %> 
+                                        </div>
+                                    <% } %>
+                                    <label for="Surname" class="surnamereg">
+                                        <span class="fullnamelabel">Apellidos</span>
+                                    </label>
+                                    <input aria-invalid="false" id="last_name" name="last_name" type="text" maxleght="64"
+                                    class="fullnamereg" id="last_name" value="<%= locals.old ? old.last_name : '' %>"><span></span>
+                                    <% if (locals.errors && errors.last_name) { %>
+                                        <div class="validation">
+                                            <%= errors.last_name.msg %> 
+                                        </div>
+                                    <% } %>
+                                </div>
+                                <div class="emailreg">
+                                    <label for="email" class="emaillabel">
+                                        <span class="emailreg2">Email</span>
+                                    </label>
+                                    <input aria-invalid="false" id="email" name="email" type="email" minleght="7"
+                                    maxleght="64" class="emailreg" id="email" value="<%= locals.old ? old.email : '' %>">
+                                </div><span></span>
+                                <% if (locals.errors && errors.email) { %>
+                                    <div class="validation">
+                                        <%= errors.email.msg %> 
+                                    </div>
+                                <% } %>
+                                <div class=" passwordreg">
+                                    <label for="password" class="passwordlabel">
+                                        <span class="passwordreg2">Contraseña</span>
+                                    </label>
+                                    <input aria-invalid="false" id="password" name="password" type="password"
+                                    minleght="7" maxleght="64" class="passwordreg" id="password" value>
+                                </div><span></span>
+                                <% if (locals.errors && errors.password) { %>
+                                    <div class="validation">
+                                        <%= errors.password.msg %> 
+                                    </div>
+                                <% } %>
+                                    <label for="birthday" class="passwordlabel">Fecha de nacimiento </label>
+                                    <p><input class="passwordlabel" type="date" name="birthday" id="" value="<%= locals.old ? old.birthday : '' %>"></p><span></span>
+                                    <br>
+                                <div class="emailinfo">
+                                    <input name="subscribeToEmails" class="emailinfo2" id="emailinfo1" type="checkbox">
+                                    <label class="emailinfo1" for="emailinfo1">
+                                        Quiero recibir información de ofertas especiales o recomendaciones a mi correo
+                                        electrónico.
+                                    </label>
+                                </div>
+                                <button type="submit" class="submitregbutton"><span></span>REGISTARME</button>
+                            </form>
+                            <div class="termsandcond">
+                                <span>Al registrarte, aceptas nuestras<a target="_blank" class="termsandcond1"
+                                        href="/terms/" rel="noopener noreferrer"> condiciones de uso</a> y
+                                    <a target="_blank" class="termsandcond1" href="/terms/privacy/"
+                                        rel="noopener noreferrer">
+                                        nuestra Política de
+                                        privacidad</a>.</span>
+                            </div>
+                        </div>
+                        <span class="userlogin">Ya tienes cuenta? <a class="linklogin" href=/user/login>Login</a></span>
+                    </div>
+                    <div class="registerimg">
+                        <img src="/images/onefortheroad.jpeg" alt="register-img">
+                    </div>
+                </div>
+
+                <%- include("partials/footer") %>
+        </body>
+
+</html>

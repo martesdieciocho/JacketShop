@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+<%- include("partials/head", {title: 'Editando: ' + product.name})%>
+    <%- include("partials/header")%>
+
+        <style>
+             .registerheader{
+        font-size: 50px;
+    }
+
+    .productEditForm{
+        width: 600px;
+        margin-left: 30%;
+    }
+
+    body{
+        text-align: center;
+    }
+
+   
+        </style>
+        <body>
+            <h1 class="registerheader">Editar producto: <i>
+                    <%= product.name %>
+                </i></h1>
+            <br>
+            <section class="formProductAdd">
+                <div class="productEditForm">
+                <form action="/products/<%=product.id%>?_method=PUT" method="post" enctype="multipart/form-data">
+
+                    <label for="name" class="surnamereg"><span class="fullnamelabel">Nombre</span></label>
+                    <p><input class="fullnamereg" type="text" name="name" id="" value="<%=product.name%>"><span></span></p>
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="validation">
+                            <%= errors.name.msg %> 
+                        </div>
+                    <% } %>
+
+                    <label for="description" class="surnamereg"><span class="fullnamelabel">Descripción</span> </label>
+                    <p><input class="fullnamereg" type="text" name="description" id="" value="<%=product.description%>"><span></span></p>
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="validation">
+                            <%= errors.description.msg %> 
+                        </div>
+                        <% } %>
+                        <label for="price" class="surnamereg"><span class="fullnamelabel">Precio</span></label>
+                        <div><input class="fullnamereg" type="number" name="price" id="price" value="<%=product.price%>"><span></span></div>
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="validation">
+                                <%= errors.price.msg %> 
+                            </div>
+                        <% } %>
+                        <label for="image">Fotos </label>
+                     <div><input type="file" name="image" id="imagen"><span></span></div>
+                    <div>
+                        <% if (locals.errors && errors.image) { %>
+                            <div class="validation">
+                                <%= errors.image.msg %> 
+                            </div>
+                        <% } %>
+                        <label for="category_id"><span class="fullnamelabel">Categoría </span></label>
+                    <select name="category_id">
+                        <option selected disabled><span class="fullnamelabel">Categoría</span> -</option>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category.id %>" <%= category.id == product.category_id ? 'selected' : ''; %>><%= category.category %></option>
+                    <% }) %>
+                    </select><span></span>
+                </div>
+                <% if (locals.errors && errors.category_id) { %>
+                    <div class="validation">
+                        <%= errors.category_id.msg %> 
+                    </div>
+                <% } %>
+                <div>
+                    <label for="material_id"><span class="fullnamelabel">Material</span> </label>
+                    <select name="material_id">
+                        <option selected disabled>Elige el material -</option>
+                    <% materials.forEach(material => { %>
+                        <option value="<%= material.id %>" <%= material.id == product.material_id ? 'selected' : ''; %>><%= material.material %></option>
+                    <% }) %>
+                    </select><span></span>
+                </div>
+                <% if (locals.errors && errors.material_id) { %>
+                    <div class="validation">
+                        <%= errors.material_id.msg %> 
+                    </div>
+                <% } %>
+                <div>
+                    <label for="color_id"><span class="fullnamelabel">Color</span> </label>
+                    <select name="color_id">
+                        <option selected disabled>Elige el color -</option>
+                    <% colors.forEach(color => { %>
+                        <option value="<%= color.id %>" <%= color.id == product.color_id ? 'selected' : ''; %>><%= color.color %></option>
+                    <% }) %>
+                    </select><span></span>
+                </div>
+                <% if (locals.errors && errors.color_id) { %>
+                    <div class="validation">
+                        <%= errors.color_id.msg %> 
+                    </div>
+                <% } %>
+                <div>
+                    <label for="size_id"><span class="fullnamelabel">Talla</span> </label>
+                    <select name="size_id">
+                        <option selected disabled>Elige la talla -</option>
+                    <% sizes.forEach(size => { %>
+                        <option value="<%= size.id %>" <%= size.id == product.size_id ? 'selected' : ''; %>><%= size.size %></option>                                                          
+                    <% }) %>
+                    </select><span></span>
+                </div>
+                <% if (locals.errors && errors.size_id) { %>
+                    <div class="validation">
+                        <%= errors.size_id.msg %> 
+                    </div>
+                <% } %>
+                    
+                    <p> <button class="submitregbutton" type="submit">Actualizar</button>
+
+                        <a class="buttonBackProducts" href="/products">Listado de Productos</a>
+                    </p>
+                </form>
+                <form action="/products/<%=product.id%>?_method=DELETE" method="POST">
+
+                    <button type="submit" class="submitregbutton">BORRAR</button>
+                </div>
+                </form>
+            </section>
+            <%- include("partials/footer") %>
+        </body>
+
+</html>

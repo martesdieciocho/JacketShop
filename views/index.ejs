@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("partials/head")%>
+<%- include("partials/header")%>
+
+<style>
+
+    .clicker{
+        text-decoration: none;
+        color: #212529;
+       
+    }
+    .clicker:hover{
+        text-decoration: none;
+    }
+    .row.featurette{
+        display: flex;
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .row{
+        text-align: center;
+        margin-left: 7px;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .row .col-lg-4{
+        width: 300px;
+    }
+
+    .row.featurette .col-md-7.order-md-2{
+        margin-top: 10%;
+        width: 600px;
+        text-align: center;
+        margin-left: 150px;
+    }
+
+    .row.featurette .col-md-7{
+        margin-top: 10%;
+        width: 600px;
+        text-align: center;
+        margin-left: 7%;
+        margin-right: 10%;
+        
+    }
+
+    .col-md-5{
+        width: 500px;
+        margin-left: 7%;
+        
+        
+    }
+
+    .developerImage img{
+        border-radius: 25%;
+        width: 200px;
+        height: 200px;
+    }
+
+    .featurette-divider{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    
+</style>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <section>
+        <!-- carrusel -->
+        <div >
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="\images\banner-1.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="\images\banner-2.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="\images\banner-4.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="\images\banner-5.png" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </section>
+    
+    <section id="section-3">
+
+        
+
+<a class="clicker" href="/products/listJacket">
+    <div class="row featurette" >
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Chaquetas para <span class="text-muted">Mujer & Hombre</span></h2>
+        <p class="lead">Ven y explora todos nuestros diseños. Elige el que más te guste!!   </p>
+      </div>
+
+      <div class="col-md-5 order-md-1">
+        <img src="/images/Tarjeta-Mujeres.png" alt="Chaquetas mujeres">
+      </div>
+    </div>
+</a>
+</section>
+
+    <hr class="featurette-divider">
+    <section id="section-4">
+    <a class="clicker" href="/products/listHoodie">
+    <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Buzos para <span class="text-muted">Mujer & Hombre</span></h2>
+          <p class="lead">Ven y explora todos nuestros diseños. Elige el que más te guste!!</p>
+        </div>
+        <div class="col-md-5">
+          <img src="/images/Tarjeta-Hombres.png" alt="Chaquetas hombres">
+  
+        </div>
+      </div>
+    </a>
+</section>
+    <!--<section id="section-2">
+        <div class="card">
+            <div class="imgBoxCard">
+                <img class="img-product" src="\images\product1.jpg" alt="producto">
+            </div>
+            <div class="detailsCard">
+                <div class="title">
+                    <h3>Chaqueta de jean</h3>
+                    <small>Chaqueta unisex</small>
+                </div>
+                <div class="description">
+                    <h3>Descripción</h3>
+                    <p>Hola soy una chaqueta Lorem ipsum dolor sit amet consectetur adipisicing elit. Et qui,
+                        earum aliquam consectetur numquam quasi minus sunt corporis impedit voluptatum!</p>
+                </div>
+                <div class="size">
+                    <h4>Tallas</h4>
+                    <ul>
+                        <li>S</li>
+                        <li>M</li>
+                        <li>L</li>
+                    </ul>
+                </div>
+                <div class="buy">
+                    <div class="price">
+                        <sup>COP</sup>
+                        <span>$250.000</span>
+                    </div>
+                    <div class="btnbuy">
+                        
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBoxCard">
+                <img class="img-product" src="\images\product1.jpg" alt="producto">
+            </div>
+            <div class="detailsCard">
+                <div class="title">
+                    <h3>Chaqueta de jean</h3>
+                    <small>Chaqueta unisex</small>
+                </div>
+                <div class="description">
+
+                    <h3>Descripción</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, nisi ab? Vitae labore eaque nulla
+                        tempore libero! Ex, sapiente quos.</p>
+                </div>
+                <div class="size">
+                    <h4>Tallas</h4>
+                    <ul>
+
+                        <li>S</li>
+                        <li>M</li>
+                        <li>L</li>
+
+
+                    </ul>
+                </div>
+                <div class="buy">
+                    <div class="price">
+                        <sup>COP</sup>
+                        <span>$250</span>
+                    </div>
+                    <div class="btnbuy">
+                       
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBoxCard">
+                <img class="img-product" src="\images\product1.jpg" alt="producto">
+            </div>
+            <div class="detailsCard">
+                <div class="title">
+                    <h3>Chaqueta de jean</h3>
+                    <small>Chaqueta unisex</small>
+                </div>
+                <div class="description">
+                    <h3>Descripción</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et qui, earum aliquam consectetur
+                        numquam quasi minus sunt corporis impedit voluptatum!</p>
+                </div>
+                <div class="size">
+                    <h4>Tallas</h4>
+                    <ul>
+
+                        <li>S</li>
+                        <li>M</li>
+                        <li>L</li>
+
+
+                    </ul>
+                </div>
+                <div class="buy">
+                    <div class="price">
+                        <sup>COP</sup>
+                        <span>$250.000</span>
+                    </div>
+                    <div class="btnbuy">
+                        
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imgBoxCard">
+                <img class="img-product" src="\images\product1.jpg" alt="producto">
+            </div>
+            <div class="detailsCard">
+                <div class="title">
+                    <h3>Chaqueta de jean</h3>
+                    <small>Chaqueta unisex</small>
+                </div>
+                <div class="description">
+                    <h3>Descripción</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et qui, earum aliquam consectetur
+                        numquam quasi minus sunt corporis impedit voluptatum!</p>
+                </div>
+                <div class="size">
+                    <h4>Tallas</h4>
+                    <ul>
+
+                        <li>S</li>
+                        <li>M</li>
+                        <li>L</li>
+
+
+                    </ul>
+                </div>
+                <div class="buy">
+                    <div class="price">
+                        <sup>COP</sup>
+                        <span>$250.000</span>
+                    </div>
+                    <div class="btnbuy">
+                        
+                        <a href="#">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        
+
+    </section>-->
+    <hr class="featurette-divider">
+    
+    
+    <div class="row">
+
+        <div class="col-lg-4">
+            <div class="developerImage">
+                <img src="/images/Manuela Quiroz.jpeg" alt="Kissy Urrego"> 
+            </div>
+          <h2 class="fw-normal">Manuela Quiroz</h2>
+          <p>Desarrolladora web full stack.</p>
+          <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/manuela-quiroz-castro-06235321a">LinkedIn &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+            <div class="developerImage">
+                <img src="/images/Kissy Urrego.jpg" alt="Kissy Urrego"> 
+            </div>
+  
+          <h2 class="fw-normal">Kissy Urrego</h2>
+          <p>Desarrolladora web full stack.</p>
+          <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/kissyurrego/"View> LinkedIn &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <div class="developerImage">
+                <img src="/images/Diana Pedroza.jpg" alt="Diana Pedroza"> 
+            </div>
+  
+          <h2 class="fw-normal">Diana Pedroza</h2>
+          <p>Desarrolladora web full stack.</p>
+          <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/dianampedroza/">LinkedIn &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <div class="developerImage">
+                <img src="/images/Marcel Pineros.jpg" alt="Marcel Piñeros"> 
+            </div>
+    
+            <h2 class="fw-normal">Marcel Piñeros</h2>
+            <p>Desarrollador web full stack.</p>
+            <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/marcel-pi%C3%B1eros-1038ba70">LinkedIn &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <div class="developerImage">
+                <img src="/images/Mateo_Duque.jpg" alt="Mateo duque"> 
+            </div>
+            <h2 class="fw-normal">Mateo Duque</h2>
+            <p>Desarrollador web full stack.</p>
+            <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/mateo-duque-b73330199/">LinkedIn &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <div class="developerImage">
+                <img src="/images/Alejandro Garcia.jpeg" alt="Alejandro Garcia"> 
+            </div>
+    
+            <h2 class="fw-normal">Alejandro García</h2>
+            <p>Desarrollador web full stack.</p>
+            <p><a class="btn btn-secondary" href="https://www.linkedin.com/in/alejandro-garcia-gallego/">LinkedIn &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+    
+</body>
+<%- include("partials/footer") %> 
+</html>

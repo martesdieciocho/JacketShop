@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/head")%>
+    <%- include("partials/header")%>
+    
+    <style>
+       
+        .cardContainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            
+            
+        }
+        .products{
+            width: 350px;
+        }
+
+        .card .product-image img{
+            height: 200px;
+            width: 350px;
+            object-fit: cover;
+        }
+
+        .card .card-body .card-title{
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            text-align: center;
+            
+        }
+        .card .card-body .info{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0px;
+         
+        }
+        .card .card-body {
+            width: 100%;
+           
+        }
+
+        .card a{
+            text-decoration: none;
+        }
+
+        .card .card-body .card-description{
+            color: rgb(136, 136, 136);
+            font-size: 12px;
+        }
+
+       
+        
+    </style>
+<body>
+    <main>
+        <section>
+            <h1 class="title-products">Página de todos los productos</h1>
+                
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <% products.forEach(product => { %>
+            <% if (product.category.category == "Chaqueta") { %>
+
+                <article class="products">
+
+                    <div class="card" style="width: 18rem;">
+                        <a href="detail/<%=product.id %>">
+
+                            <div class="product-image">
+                                <img class="card-img-top" src="/images/products/<%= product.image %>" alt="...">
+                            </div>
+
+                            <div class="card-body">
+                                <h4 class="card-title"><%= product.name  %></h4>
+                                <p class="card-description"><%= product.description %></p>
+
+                                <div class="info">
+                                    <p class="card-text">$<%= product.price %> COP.</p>
+                                    <a href="detail/<%=product.id %>" class="btn btn-primary">Comprar</a>
+                                </div>
+                            </div>
+
+                        </a> 
+                    </div>
+                </article>  
+            <% } %>
+            <% }) %>    
+            </div>
+            
+        </section>
+    </main>
+    <%- include("partials/footer") %> 
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto:wght@400;900&display=swap"
+    rel="stylesheet">
+<%- include("partials/head")%>
+<%- include("partials/header")%>
+
+<style>
+    #formProductAdd.registerform{
+        width: 600px;
+        
+        
+    }
+
+    #productsCreateForms.form{
+        width: 600px;
+        margin-left: 33%;
+    }
+    
+
+   
+
+    body{
+        text-align: center;
+    }
+   
+    .registerheader{
+       font-size: 50px;
+    }
+</style>
+
+
+<body>
+    <h1 class="registerheader">Agregar Producto</h1>
+    <br>
+    <section id="formProductAdd">
+        <div class="errors">
+        <ul class="errores"></ul>
+    <div class="registerform">
+        <form class="form" action="/products/create" method="post" id="productsCreateForms" enctype="multipart/form-data">
+            <label for="name">Nombre </label>
+            <div><input type="text" name="name" id="nombre" value="<%= locals.old ? old.name : '' %>"><span></span></div>
+            <% if (locals.errors && errors.name) { %>
+                <div class="validation">
+                    <%= errors.name.msg %> 
+                </div>
+            <% } %>
+            <label for="description">Descripción </label>
+            <div><input type="text" name="description" id="descripción" value="<%= locals.old ? old.description : '' %>"><span></span></div>
+            <% if (locals.errors && errors.description) { %>
+                <div class="validation">
+                    <%= errors.description.msg %> 
+                </div>
+            <% } %>
+            <label for="image">Fotos </label>
+            <div><input type="file" name="image" id="imagen"><span></span></div>
+            <% if (locals.errors && errors.image) { %>
+                <div class="validation">
+                    <%= errors.image.msg %> 
+                </div>
+            <% } %>
+            <div>
+                <label for="category_id">Categoría </label>
+            <select class="form-select" aria-label="Elije la categoría" name="category_id" id="categoría">
+                <option selected disabled>Elige la categoría -</option>
+            <% categories.forEach(category => { %>
+                <option value="<%= category.id %>" <%= locals.old && old.category_id == category.id ? 'selected' : ''; %>><%= category.category %></option>
+            <% }) %>
+            </select><span></span>
+        </div>
+        <% if (locals.errors && errors.category_id) { %>
+            <div class="validation">
+                <%= errors.category_id.msg %> 
+            </div>
+        <% } %>
+        <div>
+            <label for="material_id">Materiales </label>
+            <select name="material_id" id="material">
+                <option selected disabled>Elige el material -</option>
+            <% materials.forEach(material => { %>
+                <option value="<%= material.id %>" <%= locals.old && old.material_id == material.id ? 'selected' : ''; %>><%= material.material %></option>
+            <% }) %>
+            </select><span></span>
+        </div>
+        <% if (locals.errors && errors.material_id) { %>
+            <div class="validation">
+                <%= errors.material_id.msg %> 
+            </div>
+        <% } %>
+        <div>
+            <label for="color_id">Colores </label>
+            <select name="color_id" id="color">
+                <option selected disabled>Elige el color -</option>
+            <% colors.forEach(color => { %>
+                <option value="<%= color.id %>" <%= locals.old && old.color_id == color.id ? 'selected' : ''; %>><%= color.color %></option>
+            <% }) %>
+            </select><span></span>
+        </div>
+        <% if (locals.errors && errors.color_id) { %>
+            <div class="validation">
+                <%= errors.color_id.msg %> 
+            </div>
+        <% } %>
+        <div>
+            <label for="size_id">Tallas </label>
+            <select name="size_id" id="talla">
+                <option selected disabled>Elige la talla -</option>
+            <% sizes.forEach(size => { %>
+                <option value="<%= size.id %>" <%= locals.old && old.size_id == size.id ? 'selected' : ''; %>><%= size.size %></option>
+            <% }) %>
+            </select><span></span>
+        </div>
+        <% if (locals.errors && errors.size_id) { %>
+            <div class="validation">
+                <%= errors.size_id.msg %> 
+            </div>
+        <% } %>
+            <label for="price">Precio </label>
+            <div><input type="number" name="price" id="precio" value="<%= locals.old ? old.price : '' %>"><span></span></div>
+            <% if (locals.errors && errors.price) { %>
+                <div class="validation">
+                    <%= errors.price.msg %> 
+                </div>
+            <% } %>
+            <br>
+            <div> <button class="submitregbutton" type="submit">Agregar</button>
+            
+            <a  class="buttonBackProducts" href="/products">Listado de Productos</a></div>
+        </form>
+        </div>
+    </section>
+    <%- include("partials/footer") %> 
+
+    
+</body>
+
+</html>
